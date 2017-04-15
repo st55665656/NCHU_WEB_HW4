@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>小考</title>
+    <h1 id="WP">Web Programming</h1>
+    <HR>
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <style>
+    	li{
+        font-size:12pt;
+        color: black;
+    	}
+
+      .large{
+        font-size:18pt;
+        color: red;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      function addNum(){
+        document.getElementById("WP").innerHTML="Web Programming - 4102029013"
+      }
+
+      function change(){
+        var illist = document.getElementsByTagName('li');
+        illist[0].innerHTML="HTML5"
+        illist[1].innerHTML="CSS3"
+        var mysql = document.createElement("li");
+        mysql.innerHTML="MYSQL"
+        mysql.setAttribute("ID","list6");
+        document.getElementById("list").appendChild(mysql);
+      }
+
+      $(document).ready(function(){
+          $("li").mouseenter(function(){
+            $(this).addClass('large');
+          });
+          $("li").mouseleave(function(){
+            $(this).removeClass('large');
+          });
+      });
+
+    </script>
+
+    <p>Content<p>
+    <ul id="list">
+      <li id="list1">show</li>
+      <li id="list2">
+
+
+
+fadeToggle()
+fodeTo()</li>
+      <li id="list3">toggle</li>
+      <li id="list4">JavaScript</li>
+      <li id="list5">JSP</li>
+    </ul>
+
+    <input type="button" value="以JS更改元素內容" onclick="change()">
+    <input type="button" value="以jQuery更改CSS" onclick="">
+    <input type="button" value="Web Programming - 學號" onclick="addNum()">
+
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .tl {
+        font-size: 30pt;
+    }
+
+    .box1 {
+        width: 500px;
+        height: 150px;
+        border: 5px solid #444;
+        box-shadow: 5px 10px 10px #666;
+        position: absolute;
+        margin-top: 225px;
+        margin-left: 400px;
+    }
+
+    .box2 {
+        background-color: lightyellow;
+        margin: 50px auto;
+    }
+
+    body {
+        background-color: lightblue;
+    }
+
+    div.panel,
+    div.flip {
+        margin: 5px auto;
+        text-align: center;
+        background: #e5eecc;
+        border: solid 1px #c3c3c3;
+    }
+
+    #text {
+        text-align: left;
+    }
+
+    #left {
+        width: 800px;
+        height: 100px;
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+
+    #content {
+        height: 500px;
+        width: 450px;
+        margin-left: 460px;
+        margin-right: 200px;
+        position: absolute;
+        top: 0px;
+        text-align: center;
+    }
+
+    #right {
+        width: 120px;
+        height: 100px;
+        margin-right: 300px;
+        margin-top: -150px;
+    }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //show() & hide() & fadeIn() & fadeOut()開始
+        $(".box2").hide();
+        $(".box1").click(function() {
+            $(".box1").fadeOut();
+            $("#left").show();
+            $("#content").fadeIn();
+        })
+        //show() & hide() & fadeIn() & fadeOut()結束
+
+        //toggle開始
+        $("#pic").click(function() {
+            $("#right").toggle();
+        })
+        //toggle結束
+
+        //slideUp() & slideDown() 開始
+        $(".pic").click(function() {
+            $(".pic").slideDown();
+            $(this).slideUp();
+
+        })
+        //slideUp() & slideDown() 結束
+
+    });
+
+
+    //fadeToggle()&slideToggle() start
+    function more() {
+        $("#text").slideToggle("slow");
+        $("#pic").fadeToggle();
+        $("#bt1").val("點點");
+    }
+    //fadeToggle()&slideToggle() finish
+
+    function Bye(){
+      $(".box2").fadeTo("fast",0);
+      $("#byebye").fadeIn();
+    }
+
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <title>HW4</title>
+    <div class="box1" style="background-color:#e5eecc">
+        <p class=tl align="center">歡迎光臨!!</p>
+    </div>
+</head>
+
+<body>
+    <p id="byebye" style="display:none">啊!我忘記沒有目錄了QQ</p>
+    <div class="box2" id="left">
+        <img src="https://www.qidian.com.tw/images/book_covers/105/3513193_21_73-N.jpg?1483957089" height="500px">
+    </div>
+    <div class="box2" id="content">
+
+        <div class="flip" onclick="bbb()">
+            內容簡介
+        </div>
+        <div class="panel">
+            <p align="left">
+                深淵惡魔降臨……異世界來客潛伏人間……
+                <br> 　　神靈們在窺伺這座世界……
+                <br> 　　然而，這是夏族統治的世界！夏族的強者們征戰四方，巡守天地海洋，滅殺一切威脅！
+                <br> 　　這群強者有一個共同的名字——超凡生命！
+                <br> 　　……
+              </p>
+            <p id="text" style="display:none">在夏族的安陽行省，有一個很小很不起眼的領地，叫——雪鷹領！
+                <br> 　　故事，就從這裡開始！
+                <br> 　　******
+                <br> 　　繼《莽荒紀》《吞噬星空》《九鼎記》《盤龍》《星辰變》《寸芒》《星峰傳說》後，我吃西紅柿的第八本小說！
+            </p>
+
+            <img id="pic" src="http://images.sanmin.com.tw/Assets/product_images/293/293300294.jpg" style="height:150px;display:none;">
+
+            <BR>
+            <input type="button" id="bt1" value="點擊看更多" onclick="more()">
+            <input type="button" id="88" value="返回目錄" onclick="Bye()">
+        </div>
+    </div>
+    <div class="box2" id="right">
+        <img class="pic" src="http://images.sanmin.com.tw/Assets/product_images/293/293300294.jpg" style="height:500px;display:none;">
+        <img class="pic" src="http://images.sanmin.com.tw/Assets/product_images/293/293300458.jpg" style="height:500px;">
+    </div>
+
+</body>
+
+</html>
